@@ -28,6 +28,45 @@
   color: #61dafb;
 }
 
+.dark-bg{
+  background-color: black;
+  /* height: 30px; */
+  background-image: url('images/bg-desktop-dark.jpg');
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 35vh; /* Adjust the height as needed */
+}
+.dark-bg-color{
+  background-color: black;
+  height:65vh;
+}
+@media (min-width: 600px) {
+  .to-do-box{
+    height: 80%;
+    width: 40%;
+    background-color: red;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+}
+.to-do-box{
+  height: 80%;
+  width: 90%;
+  background-color: red;
+  position: absolute;
+  left: 50%;
+  top: 7%;
+  transform: translate(-50%, 0%);}
+  .Header-Theme{
+    justify-content: flex-end
+  }
+  .switch-btn{
+    cursor:pointer;
+    
+  }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
