@@ -5,8 +5,13 @@ import { useState } from "react";
 const themes = [1, 2];
 
 const list = [
-  { id: 0, text: "i am tired", selected: false, cancel: false },
-  { id: 1, text: "i am good", selected: false, cancel: false },
+  { id: 0, text: "Complete online JavaScript course", completed: true, cancel: false },
+  { id: 1, text: "Jog around the park 3x", completed: false, cancel: false },
+  { id: 2, text: "10 minutes meditation", completed: false, cancel: false },
+  { id: 3, text: "Read for 1hr", completed: false, cancel: false },
+  { id: 4, text: "Pick up groceries", completed: false, cancel: false },
+  { id: 5, text: "Complete Todo App on Frontend Mentor", completed: false, cancel: false },
+
 ];
 
 function App() {
@@ -26,7 +31,7 @@ function App() {
     const newListItem = {
       text: ToDoList,
       canceled: false,
-      selected: true,
+      completed: false,
       id: Date.now(),
     };
     console.log(newListItem);
@@ -51,6 +56,7 @@ function App() {
           Theme={Theme}
         />
         <ListComp List={List} Theme={Theme}/>
+        <Footer/>
       </div>
       <div className="App-bg">
         <div className={Theme ? "dark-bg" : "light-bg"}> </div>
@@ -152,12 +158,28 @@ function ItemsOnList({ listObj, List,Theme }) {
   return (
     // <img src={icon} alt="icon" width="20" height="20" />
     <li className="list-container">
-      <button  className={listObj.selected ? "checker-btn" : "not-checked"}>
-        {listObj.selected ? icon : null}
+      <button  className={listObj.completed ? "checker-btn" : "not-checked"}>
+        {listObj.completed ? icon : null}
       </button>
       <span className="list-text" style={{color: Theme ? 'white' : 'black'}}>{listObj.text}</span>
       <button className="x-btn">{iconCross}</button>
     </li>
   );
+}
+
+function Footer (){
+  return(
+    <div className="footer-box">
+      <div className="items-left">x items left</div>
+      <div className="all">All</div>
+      <div className="active">Active</div>
+      <div className="completed">Completed</div>
+      <div className="clear-completed">Clear-Completed</div>
+
+
+
+
+    </div>
+  )
 }
 export default App;
