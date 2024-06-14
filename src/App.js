@@ -56,7 +56,6 @@ function App() {
           Theme={Theme}
         />
         <ListComp List={List} Theme={Theme}/>
-        <Footer/>
       </div>
       <div className="App-bg">
         <div className={Theme ? "dark-bg" : "light-bg"}> </div>
@@ -102,7 +101,7 @@ function Header({ onToggleMode,Theme }) {
 
 function InputComp({ ToDoList, addList, handleSubmit,Theme }) {
   return (
-    <form style={{backgroundColor: Theme ? "hsl(237, 14%, 26%)" : "hsl(240, 5%, 92%)"}} className="form-box" onSubmit={handleSubmit}>
+    <form style={{backgroundColor: Theme ? "hsl(237, 14%, 26%)" : "hsl(236, 33%, 92%)"}} className="form-box" onSubmit={handleSubmit}>
       <div className="Fields">
         <input
           type="text"
@@ -118,13 +117,15 @@ function InputComp({ ToDoList, addList, handleSubmit,Theme }) {
 }
 
 function ListComp({ List,Theme }) {
-  return (
-    <ul className="no-bullet" style={{backgroundColor: Theme ? 'hsl(237, 14%, 26%)' : 'hsl(240, 5%, 92%)'}}>
+  return (<>
+    <ul className="no-bullet" style={{backgroundColor: Theme ? 'hsl(237, 14%, 26%)' : 'hsl(236, 33%, 92%)'}}>
       {List.map((item) => (
         <ItemsOnList listObj={item} key={item.id} List={List} Theme={Theme}/>
       ))}
+        <Footer/>
     </ul>
-  );
+
+  </>);
 }
 
 function ItemsOnList({ listObj, List,Theme }) {
@@ -158,10 +159,10 @@ function ItemsOnList({ listObj, List,Theme }) {
   return (
     // <img src={icon} alt="icon" width="20" height="20" />
     <li className="list-container">
-      <button  className={listObj.completed ? "checker-btn" : "not-checked"}>
+      <button  className={listObj.completed ? "checker" : "not-checked"}>
         {listObj.completed ? icon : null}
       </button>
-      <span className="list-text" style={{color: Theme ? 'white' : 'black'}}>{listObj.text}</span>
+      <span className="list-text" style={{color: Theme ? 'white' : 'hsl(235, 19%, 35%)'}}>{listObj.text}</span>
       <button className="x-btn">{iconCross}</button>
     </li>
   );

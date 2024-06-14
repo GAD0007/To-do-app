@@ -41,13 +41,15 @@
   height: 50vh; /* Adjust the height as needed */
 }
 .dark-bg-color{
-  background-color: black;
-  height:50vh;
+  background-color:hsl(235, 21%, 11%);
+  height:100vh
 }
 .footer-box{
   display: flex;
+  padding: 10px 30px;
+  /* border-top: 1px solid rgb(190, 188, 188); */
 }
-.checker-btn {
+.checker {
   background: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border: none;
   height: 25px;
@@ -110,8 +112,8 @@ h1{
   }
   .list-container{
     border-bottom: 1px solid rgb(199, 193, 193);
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 13px;
+    padding-bottom: 12px;
 
     display: flex;
   }
@@ -133,7 +135,7 @@ h1{
     box-shadow: 15px 10px 15px rgba(0, 0, 0, 0.2);
   };
 
-  
+/*   
   .checker-btn{
     background-color: rgb(82, 83, 19);
     border: none;
@@ -144,10 +146,10 @@ h1{
     margin-right: 30px;
   margin-left: 30px;
 
-    /* margin-top: 30px; */
+    margin-top: 30px;
 
 
-  }
+  } */
     /* .not-checked{
   margin-left: 30px;
 
@@ -159,8 +161,8 @@ h1{
     margin-right: 30px;
   } */
   .list-text{
-    font-size: large;
-    font-weight: 500;
+    font-size: 3px;
+    /* font-weight: 500; */
     /* margin-bottom: 20px; */
     /* position: relative; */
     /* bottom: 4px; */
@@ -191,14 +193,26 @@ border: none;
     margin-left: auto;
     margin-right: 20px;
   }
-  @media (min-width: 600px) {
+  .footer-box div {
+    /* color:hsl(235, 19%, 35%);
+     */
+     color:hsl(236, 9%, 61%);
+
+  }
+  .footer-box-dark div {
+    color: black;
+
+  }
+  @media (min-width: 700px) {
+   
     .to-do-box{
       height: 80%;
-      width: 40%;
+      width: 70%;
       background-color: transparent;
       position: absolute;
       left: 50%;
       transform: translate(-50%, 0%);
   }
+
   }
 
