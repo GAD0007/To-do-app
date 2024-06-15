@@ -5,13 +5,22 @@ import { useState } from "react";
 const themes = [1, 2];
 
 const list = [
-  { id: 0, text: "Complete online JavaScript course", completed: true, cancel: false },
+  {
+    id: 0,
+    text: "Complete online JavaScript course",
+    completed: true,
+    cancel: false,
+  },
   { id: 1, text: "Jog around the park 3x", completed: false, cancel: false },
   { id: 2, text: "10 minutes meditation", completed: false, cancel: false },
-  { id: 3, text: "Read for 1hr", completed: false, cancel: false },
+  { id: 3, text: "Read for 1 hour", completed: false, cancel: false },
   { id: 4, text: "Pick up groceries", completed: false, cancel: false },
-  { id: 5, text: "Complete Todo App on Frontend Mentor", completed: false, cancel: false },
-
+  {
+    id: 5,
+    text: "Complete Todo App on Frontend Mentor",
+    completed: false,
+    cancel: false,
+  },
 ];
 
 function App() {
@@ -34,14 +43,24 @@ function App() {
       completed: false,
       id: Date.now(),
     };
-    console.log(newListItem);
     handleAddItems(newListItem);
 
     // setItems((items) => [...items, item]);
 
     setToDoList("");
   }
-
+  function handleSelection(id) {
+    console.log(id);
+    setList(
+      List.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  }
+  function handleDeletion(id) {
+    setList(List.filter((item) => item.id !== id));
+  }
+  
   function handleTheme() {
     setTheme(!Theme);
   }
@@ -55,7 +74,12 @@ function App() {
           handleSubmit={handleSubmit}
           Theme={Theme}
         />
-        <ListComp List={List} Theme={Theme}/>
+        <ListComp
+          List={List}
+          Theme={Theme}
+          onToggle={handleSelection}
+          onDelete={handleDeletion}
+        />
       </div>
       <div className="App-bg">
         <div className={Theme ? "dark-bg" : "light-bg"}> </div>
@@ -65,7 +89,7 @@ function App() {
   );
 }
 
-function Header({ onToggleMode,Theme }) {
+function Header({ onToggleMode, Theme }) {
   const sun = (
     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
       <path
@@ -99,9 +123,15 @@ function Header({ onToggleMode,Theme }) {
   );
 }
 
-function InputComp({ ToDoList, addList, handleSubmit,Theme }) {
+function InputComp({ ToDoList, addList, handleSubmit, Theme }) {
   return (
-    <form style={{backgroundColor: Theme ? "hsl(237, 14%, 26%)" : "hsl(236, 33%, 92%)"}} className="form-box" onSubmit={handleSubmit}>
+    <form
+      style={{
+        backgroundColor: Theme ? "hsl(237, 14%, 26%)" : "hsl(236, 33%, 92%)",
+      }}
+      className="form-box"
+      onSubmit={handleSubmit}
+    >
       <div className="Fields">
         <input
           type="text"
@@ -116,26 +146,33 @@ function InputComp({ ToDoList, addList, handleSubmit,Theme }) {
   );
 }
 
-function ListComp({ List,Theme }) {
-  return (<>
-    <ul className="no-bullet" style={{backgroundColor: Theme ? 'hsl(237, 14%, 26%)' : 'hsl(236, 33%, 92%)'}}>
-      {List.map((item) => (
-        <ItemsOnList listObj={item} key={item.id} List={List} Theme={Theme}/>
-      ))}
-        <Footer/>
-    </ul>
-
-  </>);
+function ListComp({ List, Theme, onToggle, onDelete }) {
+  return (
+    <>
+      <ul
+        className="no-bullet"
+        style={{
+          backgroundColor: Theme ? "hsl(237, 14%, 26%)" : "hsl(236, 33%, 92%)",
+        }}
+      >
+        {List.map((item) => (
+          <ItemsOnList
+            listObj={item}
+            key={item.id}
+            List={List}
+            Theme={Theme}
+            onToggle={onToggle}
+            onDelete={onDelete}
+          />
+        ))}
+        <Footer List={List} />
+      </ul>
+    </>
+  );
 }
 
-function ItemsOnList({ listObj, List,Theme }) {
-  // function handleCompletion(id) {
-  //   console.log(id)
-  //   List.map((item) => 
+function ItemsOnList({ listObj, List, Theme, onToggle, onDelete }) {
 
-
-  // }
-  // src/images/icon-check.svg
   const icon = (
     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
       <path
@@ -159,28 +196,39 @@ function ItemsOnList({ listObj, List,Theme }) {
   return (
     // <img src={icon} alt="icon" width="20" height="20" />
     <li className="list-container">
-      <button  className={listObj.completed ? "checker" : "not-checked"}>
+      <button
+        onClick={() => onToggle(listObj.id)}
+        className={listObj.completed ? "checker" : "not-checked"}
+      >
         {listObj.completed ? icon : null}
       </button>
-      <span className="list-text" style={{color: Theme ? 'white' : 'hsl(235, 19%, 35%)'}}>{listObj.text}</span>
-      <button className="x-btn">{iconCross}</button>
+      <span
+        className="list-text"
+        style={{
+          color: Theme ? "white" : "hsl(235, 19%, 35%)",
+          textDecoration: listObj.completed ? "Line-through" : "",
+        }}
+      >
+        {listObj.text}
+      </span>
+      <button onClick={() => onDelete(listObj.id)} className="x-btn">
+        {iconCross}
+      </button>
     </li>
   );
 }
 
-function Footer (){
-  return(
+function Footer({ List }) {
+  const unpacked = List.filter((item) => !item.completed).length;
+
+  return (
     <div className="footer-box">
-      <div className="items-left">x items left</div>
+      <div className="items-left">{`${unpacked} items left`}</div>
       <div className="all">All</div>
       <div className="active">Active</div>
       <div className="completed">Completed</div>
       <div className="clear-completed">Clear-Completed</div>
-
-
-
-
     </div>
-  )
+  );
 }
 export default App;
