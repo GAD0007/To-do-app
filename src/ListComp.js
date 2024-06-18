@@ -22,6 +22,7 @@ export function ListComp({ filter,packed,unPacked,List, Theme, onToggle,onAll, o
           />
         ))}
         <Footer 
+        Theme={Theme}
         filter={filter}
           packed={packed}
         unPacked={unPacked}

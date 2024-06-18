@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic);;
 
-
+*{
+  font-family:josefin ;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -8,7 +11,7 @@
   width: 100%;
   height: 100%;
 }
-
+/*  */
 
 
 .App-header {
@@ -50,6 +53,7 @@
 }
 .footer-box{
   display: flex;
+  justify-content:space-evenly;
   padding: 10px 30px;
   /* border-top: 1px solid rgb(190, 188, 188); */
 }
@@ -60,6 +64,7 @@
   width: 25px;
   border-radius: 50%;
   border: 1px solid rgb(160, 158, 158);
+  padding-top: 5px;
   margin-right: 17px;
   margin-left: 30px;
   /* margin-top: 30px; */
@@ -75,24 +80,69 @@ margin-left: 30px;
   margin-right: 17px;
   /* margin-top: 30px; */
 }
+
+.list-text{
+  color: rgb(158, 157, 157) !important
+}
+.allClicked:focus {
+  -webkit-focus-ring-color: transparent; /* Remove the focus ring on WebKit browsers */
+}
 .all{
-margin-left: auto;
-color: hsl(235, 85%, 45%)
+/* margin-left: auto; */
+color: hsl(230, 80%, 63%) !important
+
 
 }
-.allClicked{
-  margin-left: auto;
-  color:hsl(236, 9%, 61%);
+.dark-mode:hover{
+  color: black;
+
+}
+.light-mode{
+  /* color: BLACK; */
+}
+.light-mode:hover{
+  color: white;
+
+}
+.ItemsLeft{
+  /* margin-left: auto; */
+  color:hsl(236, 23%, 88%);
+  /* cursor: pointer; */
+  -webkit-tap-highlight-color: transparent; /* Remove the tap highlight on WebKit browsers */
+  outline: none; /* Remove the focus outline */
 
 
   }
+  .items-left{
+    /* margin-left: auto; */
+    color:hsl(240, 2%, 35%);
+    /* cursor: pointer; */
+    -webkit-tap-highlight-color: transparent; /* Remove the tap highlight on WebKit browsers */
+    outline: none; /* Remove the focus outline */
+  
+  
+    }
+.allClicked{
+  /* margin-left: auto; */
+  color:hsl(236, 9%, 61%);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Remove the tap highlight on WebKit browsers */
+  outline: none; /* Remove the focus outline */
+
+
+  }
+  .block{
+    display:block;
+    text-align: center;
+    /* border-bottom: 1px solid blue; */
+  }
 .active{
-  margin-left: 2%;
+  /* margin-left: 2%; */
 
 
 }
 .clear-completed{
-  margin-left: 10%;
+  /* margin-left: 2%; */
 }
 .completed{
   /* justify-content: center; */
@@ -255,9 +305,9 @@ border: none;
     margin-left: auto;
     margin-right: 20px;
   }
-  .footer-box :hover{
+  /* .footer-box :hover{
 color: rgb(58, 58, 58);
-  }
+  } */
   .footer-box  {
     /* color:hsl(235, 19%, 35%);
      */

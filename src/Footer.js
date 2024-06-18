@@ -1,18 +1,60 @@
-export function Footer({ filter,packed,unPacked,List,onCompleted,onActive,onAll,onClear }) {
-  
-
-console.log(unPacked)
+export function Footer({
+  Theme,
+  filter,
+  packed,
+  unPacked,
+  List,
+  onCompleted,
+  onActive,
+  onAll,
+  onClear,
+}) {
+  console.log(unPacked);
   // console.log(copyArr)
+  const pluralMarker = packed > 1 ? "s" : "";
 
-
-  
   return (
-    <div className="footer-box">
-      <button className="allClicked items-left">{`${unPacked} items left`}</button>
-      <button className={filter === "All" ? "all":"allClicked"} onClick={onAll}>All</button>
-      <button className={filter === "Active" ? "all":"allClicked"} onClick={onActive}>Active</button>
-      <button className={filter === "Completed" ? "all":"allClicked"} onClick={onCompleted}>Completed</button>
-      <button className="allClicked clear-completed" onClick={()=> onClear(List.completed)}>Clear-Completed</button>
-    </div>
+    <>
+      <div className="block">
+        <div className={Theme ? "ItemsLeft" : "items-left"}>
+          {filter === "Completed"
+            ? `${packed} Item${pluralMarker} completed `
+            : `${unPacked} Item${pluralMarker} left`}
+        </div>
+      </div>
+      <div className="footer-box">
+        <button
+          className={`${Theme ? "light-mode" : "dark-mode"} ${
+            filter === "All" ? "all" : "allClicked"
+          }`}
+          onClick={onAll}
+        >
+          All
+        </button>
+        <button
+          className={`${Theme ? "light-mode" : "dark-mode"} ${
+            filter === "Active" ? "all" : "allClicked"
+          }`}
+          onClick={onActive}
+        >
+          Active
+        </button>
+        <button
+          className={`${Theme ? "light-mode" : "dark-mode"}
+      ${filter === "Completed" ? "all" : "allClicked"}`}
+          onClick={onCompleted}
+        >
+          Completed
+        </button>
+        <button
+          className={`
+          ${Theme ? "light-mode" : "dark-mode"}
+          ${"allClicked clear-completed"}`}
+          onClick={() => onClear(List.completed)}
+        >
+          Clear-Completed
+        </button>
+      </div>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 export function ItemsOnList({ listObj, List, Theme, onToggle, onDelete }) {
   const icon = (
-    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11">
       <path
         fill="none"
         stroke="#FFF"
@@ -29,7 +29,7 @@ export function ItemsOnList({ listObj, List, Theme, onToggle, onDelete }) {
         {listObj.completed ? icon : null}
       </button>
       <span
-        className="list-text"
+        className={listObj.completed ? "list-text" : "list-text-completed"}
         style={{
           color: Theme ? "white" : "hsl(235, 19%, 35%)",
           textDecoration: listObj.completed ? "Line-through" : "",
