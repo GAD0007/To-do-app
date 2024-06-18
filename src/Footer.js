@@ -11,14 +11,16 @@ export function Footer({
 }) {
   console.log(unPacked);
   // console.log(copyArr)
-  const pluralMarker = packed > 1 ? "s" : "";
+  const pluralMarker = unPacked > 1 ? "s" : "";
+  const pluralMarker2 = packed > 1 ? "s" : "";
+
 
   return (
     <>
       <div className="block">
         <div className={Theme ? "ItemsLeft" : "items-left"}>
           {filter === "Completed"
-            ? `${packed} Item${pluralMarker} completed `
+            ? `${packed} Item${pluralMarker2} completed `
             : `${unPacked} Item${pluralMarker} left`}
         </div>
       </div>

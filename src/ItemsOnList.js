@@ -27,7 +27,7 @@ export function ItemsOnList({ listObj, List, Theme, onToggle, onDelete }) {
         onClick={() => onToggle(listObj.id)}
         className={listObj.completed ? "checker" : "not-checked"}
       >
-        {listObj.completed ? icon : null}
+        {/* {listObj.completed ? icon : null} */}
       </button>
       <span
         className={listObj.completed ? "list-text" : "list-text-completed"}

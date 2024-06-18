@@ -79,7 +79,13 @@ margin-left: 30px;
 }
 
 .list-text{
-  color: rgb(158, 157, 157) !important
+  color: rgb(158, 157, 157) !important;
+  position: relative;
+  top: 4px;
+}
+.list-text-completed{
+  position: relative;
+  top: 4px;
 }
 .allClicked:focus {
   -webkit-focus-ring-color: transparent; /* Remove the focus ring on WebKit browsers */
