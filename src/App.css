@@ -3,10 +3,10 @@
 *{
   font-family:josefin ;
 }
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 .app{
   width: 100%;
   height: 100%;
@@ -55,7 +55,6 @@
   display: flex;
   justify-content:space-evenly;
   padding: 10px 30px;
-  /* border-top: 1px solid rgb(190, 188, 188); */
 }
 .checker {
   background: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -67,7 +66,6 @@
   padding-top: 5px;
   margin-right: 17px;
   margin-left: 30px;
-  /* margin-top: 30px; */
 }
   .not-checked{
 margin-left: 30px;
@@ -78,7 +76,6 @@ margin-left: 30px;
   border-radius: 50%;
   border: 1px solid  hsl(220, 98%, 61%);
   margin-right: 17px;
-  /* margin-top: 30px; */
 }
 
 .list-text{
@@ -97,9 +94,7 @@ color: hsl(230, 80%, 63%) !important
   color: black;
 
 }
-.light-mode{
-  /* color: BLACK; */
-}
+
 .light-mode:hover{
   color: white;
 
@@ -136,14 +131,7 @@ color: hsl(230, 80%, 63%) !important
     text-align: center;
     /* border-bottom: 1px solid blue; */
   }
-.active{
-  /* margin-left: 2%; */
 
-
-}
-.clear-completed{
-  /* margin-left: 2%; */
-}
 .completed{
   /* justify-content: center; */
 margin-left: 2%;
@@ -278,6 +266,10 @@ font-weight: 500;
     /* margin-bottom: 20px; */
     /* position: relative; */
     /* bottom: 4px; */
+  }
+  .check-img{
+    width: 12px;
+    /* margin-right: 5px; */
   }
   .x-btn{
     background-color: transparent;

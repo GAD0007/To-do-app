@@ -1,14 +1,15 @@
 export function ItemsOnList({ listObj, List, Theme, onToggle, onDelete }) {
-  const icon = (
-    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11">
-      <path
-        fill="none"
-        stroke="#FFF"
-        strokeWidth="2"
-        d="M1 4.304L3.696 7l6-6"
-      />
-    </svg>
-  );
+  // const icon = (
+  //   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11">
+  //     <path
+  //       fill="none"
+  //       stroke="#FFF"
+  //       strokeWidth="2"
+  //       d="M1 4.304L3.696 7l6-6"
+  //     />
+  //   </svg>
+  // );
+  const icon= <img src="check.png" alt="check" className="check-img"/>
   const iconCross = (
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
       <path
