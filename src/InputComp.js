@@ -10,13 +10,15 @@ export function InputComp({ ToDoList, addList, handleSubmit, Theme }) {
       <div className="Fields">
         <input
           type="text"
-          className="Fields"
+          className="FieldsInput"
           value={ToDoList}
           onChange={addList}
           placeholder="Create a new todo.."
         />
         {/* <button>submit</button> */}
+        <button className="addbtn">Add</button>
       </div>
+      
     </form>
   );
 }

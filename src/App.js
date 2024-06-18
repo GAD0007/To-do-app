@@ -112,6 +112,7 @@ function App() {
           onClear={clearCompleted}
           unPacked={unPacked}
           packed={packed}
+          filter={filter}
 
 
         />

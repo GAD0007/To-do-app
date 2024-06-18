@@ -77,7 +77,15 @@ margin-left: 30px;
 }
 .all{
 margin-left: auto;
+color: hsl(235, 85%, 45%)
+
 }
+.allClicked{
+  margin-left: auto;
+  color:hsl(236, 9%, 61%);
+
+
+  }
 .active{
   margin-left: 2%;
 
@@ -116,6 +124,13 @@ h1{
     display: flex;
     width: 100%;
   }
+  .list-container{
+    border-bottom: 1px solid rgb(199, 193, 193);
+    margin-bottom: 13px;
+    padding-bottom: 12px;
+font-size: 15px;
+    display: flex;
+  }
   @media (max-width: 600px) {
   
   .list-container{
@@ -124,17 +139,50 @@ h1{
     padding-bottom: 12px;
 font-size: 12px;
     display: flex;
-  }}
+  }
+}
+
+.FieldsInput{
+  /* margin-left: 20px; */
+  /* margin-bottom: 20px; */
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  display: flex;
+
+  border-radius: 10px;
+
+
+
+    width: 97%;
+    /* margin-left: auto; */
+    margin-right: 20px;
+
+  }
+  button{
+    cursor: pointer ;
+    border: none;
+    background-color: transparent;
+  }
+  .addbtn{
+    background: linear-gradient(90deg, hsl(244, 65%, 56%), hsl(261, 87%, 65%));
+color: white;
+font-weight: 500;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+  }
   .Fields{
   /* margin-left: 20px; */
   /* margin-bottom: 20px; */
   font-size: 18px;
   padding: 10px;
   border: none;
+  display: flex;
 
 
 
-    width: 97%;
+    width: 98%;
     /* margin-left: auto; */
     /* margin-right: auto; */
 
@@ -207,7 +255,10 @@ border: none;
     margin-left: auto;
     margin-right: 20px;
   }
-  .footer-box div {
+  .footer-box :hover{
+color: rgb(58, 58, 58);
+  }
+  .footer-box  {
     /* color:hsl(235, 19%, 35%);
      */
      color:hsl(236, 9%, 61%);

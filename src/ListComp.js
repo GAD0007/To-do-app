@@ -1,7 +1,7 @@
 import { ItemsOnList } from "./ItemsOnList";
 import { Footer } from "./Footer";
 
-export function ListComp({ packed,unPacked,List, Theme, onToggle,onAll, onDelete,onCompleted,onActive,onClear }) {
+export function ListComp({ filter,packed,unPacked,List, Theme, onToggle,onAll, onDelete,onCompleted,onActive,onClear }) {
   return (
     <>
       <ul
@@ -22,6 +22,7 @@ export function ListComp({ packed,unPacked,List, Theme, onToggle,onAll, onDelete
           />
         ))}
         <Footer 
+        filter={filter}
           packed={packed}
         unPacked={unPacked}
         List={List} onClear={onClear}onAll={onAll}onActive={onActive} onCompleted={onCompleted}/>
