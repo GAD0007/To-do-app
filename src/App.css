@@ -2,6 +2,7 @@
 
 *{
   font-family:josefin ;
+  font-size: 18px;
 }
 /* .App-logo {
   height: 40vmin;
@@ -175,7 +176,7 @@ font-size: 15px;
     border-bottom: 1px solid rgb(199, 193, 193);
     margin-bottom: 13px;
     padding-bottom: 12px;
-font-size: 12px;
+font-size: 14px;
     display: flex;
   }
 }
@@ -267,10 +268,14 @@ font-weight: 500;
     /* position: relative; */
     /* bottom: 4px; */
   }
-  .check-img{
-    width: 12px;
-    /* margin-right: 5px; */
+  
+    .check-img {
+      width: 11px;
+      margin-bottom: 4px;
+      /* margin-right: 5px; */
   }
+    /* margin-right: 5px; */
+  
   .x-btn{
     background-color: transparent;
     border: none;
